@@ -1,9 +1,11 @@
-def lcm(a, b):
-    for l in range(1, a * b + 1):
-        if l % a == 0 and l % b == 0:
-            return l
+def gcd(a,b):
+    while b:
+        a,b=b,a%b
+    return a
 
-    assert False
+def lcm(a, b):
+    return (a//gcd(a,b))*b
+
 
 
 if __name__ == '__main__':
